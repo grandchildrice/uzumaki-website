@@ -256,7 +256,7 @@ export default function Home() {
               title="Visit or Stay"
               description="Interested in visiting or staying at Uzumaki Research House?"
               linkText="Learn More"
-              linkHref="/visit"
+              linkHref="https://grandchildrice.notion.site/f2503aa052084f039474859dccd39a17?pvs=105"
             />
             <GetInvolvedCard
               title="Donate"

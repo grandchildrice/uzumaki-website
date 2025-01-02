@@ -51,7 +51,10 @@ export default function Donate() {
             other ideas for supporting our research, please don't hesitate to
             reach out. We're always open to collaboration and new ideas.
           </p>
-          <Link href="/contact" className="text-blue-400 hover:underline">
+          <Link
+            href="https://www.notion.so/grandchildrice/16fd05af0d5a80c0abb3ddffdeddef6b?pvs=106"
+            className="text-blue-400 hover:underline"
+          >
             Contact us with your ideas
           </Link>
         </section>
