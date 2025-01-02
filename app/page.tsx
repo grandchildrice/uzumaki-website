@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import { ArrowRight } from "lucide-react";
 import ResearchTheme from "@/components/ResearchTheme";
 import ResearchOutput from "@/components/ResearchOutput";
 import ActivityItem from "@/components/ActivityItem";
@@ -170,9 +169,6 @@ export default function Home() {
           >
             Explore Our Research
           </a>
-        </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-          <ArrowRight className="w-12 h-12 text-blue-400 animate-bounce" />
         </div>
       </div>
 

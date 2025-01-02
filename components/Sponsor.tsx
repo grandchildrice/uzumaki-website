@@ -18,7 +18,7 @@ const Sponsor: React.FC<SponsorProps> = ({
       href={website}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex flex-col items-center justify-center p-4 bg-gray-800 rounded-lg transition-transform hover:scale-105"
+      className="flex flex-col items-center justify-start p-4 bg-gray-800 rounded-lg transition-transform hover:scale-105"
     >
       <Image
         src={logo}
@@ -27,8 +27,10 @@ const Sponsor: React.FC<SponsorProps> = ({
         height={100}
         className="mb-2"
       />
-      <span className="text-center text-md">{name}</span>
-      {description && <p className="text-center text-sm">{description}</p>}
+      <p className="text-center text-md font-bold">{name}</p>
+      {description && (
+        <p className="text-center text-sm text-gray-400">{description}</p>
+      )}
     </a>
   );
 };
