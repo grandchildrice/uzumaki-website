@@ -3,7 +3,7 @@ import ResearchTheme from "@/components/ResearchTheme";
 import ResearchOutput from "@/components/ResearchOutput";
 import ActivityItem from "@/components/ActivityItem";
 import GetInvolvedCard from "@/components/GetInvolvedCard";
-import Sponsor from "@/components/Sponsor";
+import Person from "@/components/Person";
 import WhatWeDo from "@/components/WhatWeDo";
 import SocialMediaButton from "@/components/SocialMediaButton";
 import Image from "next/image";
@@ -113,37 +113,43 @@ const residents = [
     name: "vita",
     logo: "/residents/vita.jpeg",
     website: "https://x.com/keccak255",
-    description: "Consensus / Single Slot Finality / Distributed System",
+    topics: ["Consensus", "zkVM", "MEV"],
+    description: "Protocol Researcher at Titania Research",
   },
   {
     name: "gohan",
     logo: "/residents/gohan.jpg",
     website: "https://x.com/grandchildrice",
-    description: "zkVM",
+    topics: ["zkVM", "MPC", "Verifiable Credential"],
+    description: "Master student at Waseda Univ, Grantee at PSE",
   },
   {
     name: "Alphaist",
     logo: "/residents/alpha.jpeg",
     website: "https://x.com/0xAlphaist",
-    description: "MEV / OFA / DEX / Market Microstructure",
+    topics: ["MEV", "OFA", "DEX", "Market Microstructure"],
+    description: "Application Researcher at Titania Research",
   },
   {
     name: "tei",
     logo: "/residents/tei.jpeg",
     website: "https://x.com/82y31",
-    description: "MEV / PBS / Mechanism Design",
+    topics: ["MEV", "PBS", "Mechanism Design"],
+    description: "Protocol Researcher at Titania Research",
   },
   {
     name: "banri",
     logo: "/residents/banri.jpeg",
     website: "https://protocol.ai",
-    description: "Trading Strategy",
+    topics: ["Trading Strategy"],
+    description: "Application Researcher at Titania Research",
   },
   {
     name: "adust",
     logo: "/residents/adust.jpg",
     website: "https://x.com/adust09",
-    description: "VOLE",
+    topics: ["VOLE", "MPC"],
+    description: "Grantee at PSE",
   },
 ];
 
@@ -208,8 +214,8 @@ export default function Home() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-blue-400">Residents</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {residents.map((sponsor, index) => (
-              <Sponsor key={index} {...sponsor} />
+            {residents.map((resident, index) => (
+              <Person key={index} {...resident} />
             ))}
           </div>
         </section>

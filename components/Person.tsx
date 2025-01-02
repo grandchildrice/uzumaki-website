@@ -1,16 +1,18 @@
 import Image from "next/image";
 
-interface SponsorProps {
+interface PersonProps {
   name: string;
   logo: string;
   website: string;
+  topics: string[];
   description?: string;
 }
 
-const Sponsor: React.FC<SponsorProps> = ({
+const Person: React.FC<PersonProps> = ({
   name,
   logo,
   website,
+  topics,
   description,
 }) => {
   return (
@@ -29,10 +31,20 @@ const Sponsor: React.FC<SponsorProps> = ({
       />
       <p className="text-center text-md font-bold">{name}</p>
       {description && (
-        <p className="text-center text-sm text-gray-400">{description}</p>
+        <p className="text-center text-sm text-gray-400 mb-2">{description}</p>
       )}
+      <div className="flex flex-wrap justify-center gap-2 mt-2">
+        {topics.map((topic, index) => (
+          <span
+            key={index}
+            className="px-3 py-1 text-xs text-blue-400 bg-gray-700 rounded-full"
+          >
+            {topic}
+          </span>
+        ))}
+      </div>
     </a>
   );
 };
 
-export default Sponsor;
+export default Person;
