@@ -2,7 +2,7 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
-export default function Contribute() {
+export default function Donate() {
   return (
     <div className="container mx-auto px-4 py-8">
       <Link
@@ -12,7 +12,7 @@ export default function Contribute() {
         <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
       </Link>
       <h1 className="text-4xl font-bold mb-8 text-blue-400">
-        Contribute to Our Research
+        Donate to Our Research
       </h1>
       <div className="space-y-8">
         <section>
@@ -23,7 +23,7 @@ export default function Contribute() {
             advance our research goals.
           </p>
           <Link
-            href="https://www.amazon.com/wishlist"
+            href="https://www.amazon.jp/hz/wishlist/ls/16QCGM9CJ1NL5?ref_=wl_share"
             className="text-blue-400 hover:underline"
           >
             View our Amazon Wish List
@@ -38,7 +38,7 @@ export default function Contribute() {
           </p>
           <div className="bg-gray-800 p-4 rounded-lg">
             <p className="font-mono break-all">
-              0x1234567890123456789012345678901234567890
+              0xa1a8d76A0044ce9d8aeF7c5279111a3029f58a6a
             </p>
           </div>
         </section>
@@ -51,7 +51,10 @@ export default function Contribute() {
             other ideas for supporting our research, please don't hesitate to
             reach out. We're always open to collaboration and new ideas.
           </p>
-          <Link href="/contact" className="text-blue-400 hover:underline">
+          <Link
+            href="https://www.notion.so/grandchildrice/16fd05af0d5a80c0abb3ddffdeddef6b?pvs=106"
+            className="text-blue-400 hover:underline"
+          >
             Contact us with your ideas
           </Link>
         </section>

@@ -20,7 +20,7 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ title, description }) => {
   };
 
   return (
-    <div className="border border-gray-700 p-6 rounded-lg flex items-start space-x-4">
+    <div className="border border-gray-700 p-6 rounded-lg flex items-center space-x-4">
       <div className="flex-shrink-0">{getIcon(title)}</div>
       <div>
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
