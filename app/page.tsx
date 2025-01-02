@@ -227,7 +227,7 @@ export default function Home() {
               Research Outputs
             </h2>
             <div className="text-right">
-              <Link href="/research" className="text-blue-400 hover:underline">
+              <Link href="/researches" className="text-blue-400 hover:underline">
                 See More
               </Link>
             </div>
@@ -245,7 +245,7 @@ export default function Home() {
               Recent Activity
             </h2>
             <div className="text-right">
-              <Link href="/activity" className="text-blue-400 hover:underline">
+              <Link href="/activities" className="text-blue-400 hover:underline">
                 See More
               </Link>
             </div>

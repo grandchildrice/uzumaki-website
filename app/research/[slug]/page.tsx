@@ -21,7 +21,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const databaseId = process.env.NOTION_DATABASE_ID;
+  const databaseId = process.env.NOTION_DATABASE_RESEARCH_ID;
 
   if (!databaseId) {
     throw new Error('Internal error.');
@@ -53,7 +53,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const databaseId = process.env.NOTION_DATABASE_ID;
+  const databaseId = process.env.NOTION_DATABASE_RESEARCH_ID;
 
   if (!databaseId) {
     throw new Error('Internal error.');
