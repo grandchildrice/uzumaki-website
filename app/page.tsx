@@ -6,6 +6,7 @@ import GetInvolvedCard from "@/components/GetInvolvedCard";
 import Person from "@/components/Person";
 import WhatWeDo from "@/components/WhatWeDo";
 import SocialMediaButton from "@/components/SocialMediaButton";
+import Link from "next/link";
 import Image from "next/image";
 
 const researchThemes = [
@@ -235,6 +236,11 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8 text-blue-400">
             Recent Activity
           </h2>
+          <div className="text-right">
+            <Link href="/activity" className="text-blue-400 hover:underline">
+              See More
+            </Link>
+          </div>
           <div className="space-y-8">
             {activities.map((activity, index) => (
               <ActivityItem key={index} {...activity} />
