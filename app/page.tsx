@@ -6,9 +6,9 @@ import ResearchOutput from "@/components/ResearchOutput";
 import ActivityItem from "@/components/ActivityItem";
 import GetInvolvedCard from "@/components/GetInvolvedCard";
 import Sponsor from "@/components/Sponsor";
-import { useState, useEffect } from "react";
 import WhatWeDo from "@/components/WhatWeDo";
 import SocialMediaButton from "@/components/SocialMediaButton";
+import Image from "next/image";
 
 const researchThemes = [
   {
@@ -146,52 +146,16 @@ const residents = [
 ];
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <div className="min-h-screen">
       <div className="h-screen flex flex-col items-center justify-center">
         <div className="text-center">
           <div className="mb-8 relative w-48 h-48 mx-auto">
-            {mounted ? (
-              <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 200 200"
-                xmlns="http://www.w3.org/2000/svg"
-                className="animate-spin-slow"
-              >
-                <defs>
-                  <linearGradient
-                    id="spiral-gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stopColor="#60A5FA" />
-                    <stop offset="100%" stopColor="#3B82F6" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M100 100 m0 -75 a 75 75 0 1 1 0 150 a 75 75 0 1 1 0 -150"
-                  stroke="url(#spiral-gradient)"
-                  strokeWidth="8"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-blue-400 text-6xl font-bold animate-spin-slow">
-                  ⟳
-                </div>
-              </div>
-            )}
+            <Image
+              src="./logo.svg"
+              alt="Uzumaki Research House"
+              layout="fill"
+            />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-blue-400">
             Uzumaki Research House
