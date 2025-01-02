@@ -8,6 +8,7 @@ import GetInvolvedCard from "@/components/GetInvolvedCard";
 import Sponsor from "@/components/Sponsor";
 import { useState, useEffect } from "react";
 import WhatWeDo from "@/components/WhatWeDo";
+import SocialMediaButton from "@/components/SocialMediaButton";
 
 const researchThemes = [
   {
@@ -283,7 +284,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
+        <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-blue-400">
             Get Involved
           </h2>
@@ -299,6 +300,19 @@ export default function Home() {
               description="Support our research efforts through donations or our Amazon Wish List."
               linkText="Contribute Now"
               linkHref="/contribute"
+            />
+          </div>
+        </section>
+
+        <section>
+          <div className="flex space-x-4 m-auto">
+            <SocialMediaButton
+              platform="X"
+              url="https://x.com/grandchildrice"
+            />
+            <SocialMediaButton
+              platform="Telegram"
+              url="https://t.me/uzumakiethereum"
             />
           </div>
         </section>
