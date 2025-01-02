@@ -1,15 +1,13 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
-import { ArrowRight } from "lucide-react";
 import ResearchTheme from "@/components/ResearchTheme";
 import ResearchOutput from "@/components/ResearchOutput";
 import ActivityItem from "@/components/ActivityItem";
 import GetInvolvedCard from "@/components/GetInvolvedCard";
-import Sponsor from "@/components/Sponsor";
-import { useState, useEffect } from "react";
+import Person from "@/components/Person";
 import WhatWeDo from "@/components/WhatWeDo";
 import SocialMediaButton from "@/components/SocialMediaButton";
 import Link from "next/link";
+import Image from "next/image";
 
 const researchThemes = [
   {
@@ -87,6 +85,7 @@ const activities = [
   },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const sponsors = [
   {
     name: "Ethereum Foundation",
@@ -113,89 +112,59 @@ const sponsors = [
 const residents = [
   {
     name: "vita",
-    logo: "/residents/gohan.jpg",
-    website: "https://ethereum.org",
-    description: "researcher at Uzumaki Research House",
+    logo: "/residents/vita.jpeg",
+    website: "https://x.com/keccak255",
+    topics: ["Consensus", "zkVM", "MEV"],
+    description: "Protocol Researcher at Titania Research",
   },
   {
     name: "gohan",
     logo: "/residents/gohan.jpg",
-    website: "https://consensys.net",
-    description: "researcher at Uzumaki Research House",
+    website: "https://x.com/grandchildrice",
+    topics: ["zkVM", "MPC", "Verifiable Credential"],
+    description: "Master student at Waseda Univ, Grantee at PSE",
   },
   {
-    name: "alphaist",
-    logo: "/residents/gohan.jpg",
-    website: "https://web3.foundation",
-    description: "researcher at Uzumaki Research House",
+    name: "Alphaist",
+    logo: "/residents/alpha.jpeg",
+    website: "https://x.com/0xAlphaist",
+    topics: ["MEV", "OFA", "DEX", "Market Microstructure"],
+    description: "Application Researcher at Titania Research",
   },
   {
     name: "tei",
-    logo: "/residents/gohan.jpg",
-    website: "https://protocol.ai",
-    description: "researcher at Uzumaki Research House",
+    logo: "/residents/tei.jpeg",
+    website: "https://x.com/82y31",
+    topics: ["MEV", "PBS", "Mechanism Design"],
+    description: "Protocol Researcher at Titania Research",
   },
   {
     name: "banri",
-    logo: "/residents/gohan.jpg",
+    logo: "/residents/banri.jpeg",
     website: "https://protocol.ai",
-    description: "researcher at Uzumaki Research House",
+    topics: ["Trading Strategy"],
+    description: "Application Researcher at Titania Research",
   },
   {
     name: "adust",
-    logo: "/residents/gohan.jpg",
-    website: "https://protocol.ai",
-    description: "researcher at Uzumaki Research House",
+    logo: "/residents/adust.jpg",
+    website: "https://x.com/adust09",
+    topics: ["VOLE", "MPC"],
+    description: "Grantee at PSE",
   },
 ];
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <div className="min-h-screen">
       <div className="h-screen flex flex-col items-center justify-center">
         <div className="text-center">
           <div className="mb-8 relative w-48 h-48 mx-auto">
-            {mounted ? (
-              <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 200 200"
-                xmlns="http://www.w3.org/2000/svg"
-                className="animate-spin-slow"
-              >
-                <defs>
-                  <linearGradient
-                    id="spiral-gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stopColor="#60A5FA" />
-                    <stop offset="100%" stopColor="#3B82F6" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M100 100 m0 -75 a 75 75 0 1 1 0 150 a 75 75 0 1 1 0 -150"
-                  stroke="url(#spiral-gradient)"
-                  strokeWidth="8"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-blue-400 text-6xl font-bold animate-spin-slow">
-                  ⟳
-                </div>
-              </div>
-            )}
+            <Image
+              src="./logo.svg"
+              alt="Uzumaki Research House"
+              layout="fill"
+            />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-blue-400">
             Uzumaki Research House
@@ -210,9 +179,6 @@ export default function Home() {
           >
             Explore Our Research
           </a>
-        </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-          <ArrowRight className="w-12 h-12 text-blue-400 animate-bounce" />
         </div>
       </div>
 
@@ -249,8 +215,8 @@ export default function Home() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-blue-400">Residents</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {residents.map((sponsor, index) => (
-              <Sponsor key={index} {...sponsor} />
+            {residents.map((resident, index) => (
+              <Person key={index} {...resident} />
             ))}
           </div>
         </section>
@@ -282,7 +248,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mb-16">
+        {/* <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-blue-400">
             Our Sponsors
           </h2>
@@ -291,7 +257,7 @@ export default function Home() {
               <Sponsor key={index} {...sponsor} />
             ))}
           </div>
-        </section>
+        </section> */}
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-blue-400">
@@ -302,23 +268,19 @@ export default function Home() {
               title="Visit or Stay"
               description="Interested in visiting or staying at Uzumaki Research House?"
               linkText="Learn More"
-              linkHref="/visit"
+              linkHref="https://grandchildrice.notion.site/f2503aa052084f039474859dccd39a17?pvs=105"
             />
             <GetInvolvedCard
-              title="Contribute"
+              title="Donate"
               description="Support our research efforts through donations or our Amazon Wish List."
-              linkText="Contribute Now"
-              linkHref="/contribute"
+              linkText="Donate Now"
+              linkHref="/donate"
             />
           </div>
         </section>
 
         <section>
           <div className="flex space-x-4 m-auto">
-            <SocialMediaButton
-              platform="X"
-              url="https://x.com/grandchildrice"
-            />
             <SocialMediaButton
               platform="Telegram"
               url="https://t.me/uzumakiethereum"
