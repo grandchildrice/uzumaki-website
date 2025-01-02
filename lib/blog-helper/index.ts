@@ -1,7 +1,7 @@
-import { cache } from 'react';
-import NotionToZennMd from 'notion-to-zenn-md';
-import { NotionPropertyMappings } from '@/const/notion-property-mappings';
-import markdownToHtml from 'zenn-markdown-html';
+import { cache } from "react";
+import NotionToZennMd from "notion-to-zenn-md";
+import { NotionPropertyMappings } from "@/const/notion-property-mappings";
+import markdownToHtml from "zenn-markdown-html";
 import {
   getDatabase,
   getNotionClient,
@@ -12,10 +12,10 @@ import {
   isSelectProperty,
   isTitleProperty,
   retrieveDatabase,
-} from '../notion';
-import { Site } from '@/const/site';
-import { Env } from '@/const/env';
-import 'server-only';
+} from "../notion";
+import { Site } from "@/const/site";
+import { Env } from "@/const/env";
+import "server-only";
 
 /**
  * Returns a new instance of NotionToZennMd with the provided secret.
@@ -66,7 +66,7 @@ export const notionToHtml = cache(async (secret: string, pageId: string) => {
   const markdown = await getPageMarkdown(secret, pageId);
 
   const html = markdownToHtml(markdown, {
-    embedOrigin: 'https://embed.zenn.studio',
+    embedOrigin: "https://embed.zenn.studio",
   });
 
   return html;
@@ -84,18 +84,22 @@ export type GetArticlesOption = {
  * @returns {Promise<Array>} - The articles from the database.
  */
 export const getArticles = cache(
-  async (databaseId: string, option?: GetArticlesOption) => {
+  async (
+    databaseId: string,
+    option?: GetArticlesOption,
+    page_size?: number
+  ) => {
     const notion = getNotionClient(process.env.NOTION_TOKEN);
-    const pages = await getDatabase(notion, databaseId);
+    const pages = await getDatabase(notion, databaseId, page_size);
 
     let articles = pages.map((page) => {
-      let title = 'Title';
+      let title = "Title";
       const titleProp = page.properties[NotionPropertyMappings.title];
       if (isTitleProperty(titleProp)) {
-        title = titleProp.title.map((t) => t.plain_text).join('');
+        title = titleProp.title.map((t) => t.plain_text).join("");
       }
 
-      let type = 'misc';
+      let type = "misc";
       const typeProp = page.properties[NotionPropertyMappings.type];
       if (isSelectProperty(typeProp)) {
         type = typeProp.select.name;
@@ -107,17 +111,17 @@ export const getArticles = cache(
         topics = topicsProp.multi_select.map((t) => t.name);
       }
 
-      let publishedAt = '';
+      let publishedAt = "";
       const publishedAtProp =
         page.properties[NotionPropertyMappings.publishedAt];
       if (isDateProperty(publishedAtProp)) {
         publishedAt = new Date(publishedAtProp.date.start).toLocaleString(
-          Site.locale.replace('_', '-'),
+          Site.locale.replace("_", "-"),
           {
-            month: 'short',
-            day: '2-digit',
-            year: 'numeric',
-          },
+            month: "short",
+            day: "2-digit",
+            year: "numeric",
+          }
         );
       }
 
@@ -136,7 +140,7 @@ export const getArticles = cache(
     }
 
     return articles;
-  },
+  }
 );
 
 /**
@@ -148,7 +152,7 @@ export const getAllTopics = cache(async (databaseId: string) => {
   const articles = await getArticles(databaseId);
 
   const topics = Array.from(
-    new Set(articles.flatMap((article) => article.topics)),
+    new Set(articles.flatMap((article) => article.topics))
   ).sort((a, b) => a.localeCompare(b));
 
   return topics;
@@ -163,7 +167,7 @@ export const getAllArticleTypes = cache(async (databaseId: string) => {
   const articles = await getArticles(databaseId);
 
   const articleTypes = Array.from(
-    new Set(articles.flatMap((article) => article.type)),
+    new Set(articles.flatMap((article) => article.type))
   ).sort((a, b) => a.localeCompare(b));
 
   return articleTypes;
@@ -187,10 +191,10 @@ export const getSiteInfo = cache(async (databaseId: string) => {
 
   return {
     ...Site,
-    title: database.title.map((item) => item.plain_text).join(''),
-    description: database.description.map((item) => item.plain_text).join(''),
+    title: database.title.map((item) => item.plain_text).join(""),
+    description: database.description.map((item) => item.plain_text).join(""),
     url: Env.BaseUrl,
     icon,
-    userName: user.name || '',
+    userName: user.name || "",
   };
 });

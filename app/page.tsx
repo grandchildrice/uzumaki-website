@@ -1,16 +1,24 @@
-"use client";
 import ResearchTheme from "@/components/ResearchTheme";
-import ResearchOutput from "@/components/ResearchOutput";
-import ActivityItem from "@/components/ActivityItem";
 import GetInvolvedCard from "@/components/GetInvolvedCard";
 import Person from "@/components/Person";
 import WhatWeDo from "@/components/WhatWeDo";
 import SocialMediaButton from "@/components/SocialMediaButton";
 import Link from "next/link";
 import Image from "next/image";
-import { activities, researchOutputs, researchThemes, residents, wedo } from "@/const/metadata";
+import { researchThemes, residents, wedo } from "@/const/metadata";
+import ArticlesList from "@/components/articles-list";
 
-export default function Home() {
+export default async function Home() {
+  const activity_db_id = process.env.NOTION_DATABASE_ACTIVITY_ID;
+  if (!activity_db_id) {
+    throw new Error("Internal error.");
+  }
+
+  const research_db_id = process.env.NOTION_DATABASE_RESEARCH_ID;
+  if (!research_db_id) {
+    throw new Error("Internal error.");
+  }
+
   return (
     <div className="min-h-screen">
       <div className="h-screen flex flex-col items-center justify-center">
@@ -83,15 +91,17 @@ export default function Home() {
               Research Outputs
             </h2>
             <div className="text-right">
-              <Link href="/researches" className="text-blue-400 hover:underline">
+              <Link href="/research" className="text-blue-400 hover:underline">
                 See More
               </Link>
             </div>
           </div>
           <div className="grid gap-6">
-            {researchOutputs.map((output, index) => (
-              <ResearchOutput key={index} {...output} />
-            ))}
+            <ArticlesList
+              databaseId={research_db_id}
+              style="research"
+              getRecent={true}
+            />
           </div>
         </section>
 
@@ -101,16 +111,18 @@ export default function Home() {
               Recent Activity
             </h2>
             <div className="text-right">
-              <Link href="/activities" className="text-blue-400 hover:underline">
+              <Link href="/activity" className="text-blue-400 hover:underline">
                 See More
               </Link>
             </div>
           </div>
 
           <div className="space-y-8">
-            {activities.map((activity, index) => (
-              <ActivityItem key={index} {...activity} />
-            ))}
+            <ArticlesList
+              databaseId={activity_db_id}
+              style="activity"
+              getRecent={true}
+            />
           </div>
         </section>
 

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface ActivityItemProps {
   date: string;
   title: string;
@@ -9,6 +11,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
   date,
   title,
   description,
+  link,
 }) => {
   return (
     <div className="relative pl-8 pb-8 border-l border-gray-700">
@@ -16,6 +19,9 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-gray-400 mb-2">{date}</p>
       <p>{description}</p>
+      <Link href={link} className="text-blue-400 hover:underline">
+        Read More
+      </Link>
     </div>
   );
 };

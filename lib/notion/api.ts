@@ -3,11 +3,11 @@
  * @packageDocumentation
  */
 
-import { Client } from '@notionhq/client';
-import { cache } from 'react';
-import 'server-only';
-import { Block, Pages, Page, User, Database } from './types';
-import { NotionPropertyMappings } from '@/const/notion-property-mappings';
+import { Client } from "@notionhq/client";
+import { cache } from "react";
+import "server-only";
+import { Block, Pages, Page, User, Database } from "./types";
+import { NotionPropertyMappings } from "@/const/notion-property-mappings";
 
 /**
  * Returns a new Notion client instance.
@@ -18,7 +18,7 @@ export const getNotionClient = cache(
   (auth: string | undefined): Client =>
     new Client({
       auth,
-    }),
+    })
 );
 
 /**
@@ -28,7 +28,11 @@ export const getNotionClient = cache(
  * @returns The database object.
  */
 export const getDatabase = cache(
-  async (notion: Client, databaseId: string): Promise<Pages> => {
+  async (
+    notion: Client,
+    databaseId: string,
+    page_size = 100
+  ): Promise<Pages> => {
     const response = await notion.databases.query({
       database_id: databaseId,
       filter: {
@@ -40,13 +44,14 @@ export const getDatabase = cache(
       sorts: [
         {
           property: NotionPropertyMappings.publishedAt,
-          direction: 'descending',
+          direction: "descending",
         },
       ],
+      page_size: page_size,
     });
 
     return response.results as Pages;
-  },
+  }
 );
 
 /**
@@ -60,7 +65,7 @@ export const getPage = cache(
     const response = await notion.pages.retrieve({ page_id: pageId });
 
     return response as Page;
-  },
+  }
 );
 
 /**
@@ -76,7 +81,7 @@ export const getBlock = cache(
     });
 
     return response as Block;
-  },
+  }
 );
 
 /**
@@ -92,7 +97,7 @@ export const getUser = cache(
     });
 
     return response as User;
-  },
+  }
 );
 
 /**
@@ -108,5 +113,5 @@ export const retrieveDatabase = cache(
     });
 
     return response as Database;
-  },
+  }
 );
