@@ -10,6 +10,12 @@ import { getPageMetadata, getSiteInfo, notionToHtml } from '@/lib/blog-helper';
 
 export const revalidate = 60 * 5; // revalidate at most every 5 minits
 
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
 export async function generateMetadata({
   params: { slug },
 }: {
@@ -63,9 +69,7 @@ export async function generateStaticParams() {
 
 export default async function ArticlePage({
   params: { slug },
-}: {
-  params: { slug: string };
-}) {
+}: PageProps) {
   const secret = process.env.NOTION_TOKEN;
   if (!secret) {
     throw new Error('Internal error.');
