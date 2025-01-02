@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 import ResearchTheme from "@/components/ResearchTheme";
 import ResearchOutput from "@/components/ResearchOutput";
@@ -82,6 +81,7 @@ const activities = [
   },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const sponsors = [
   {
     name: "Ethereum Foundation",
@@ -233,7 +233,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mb-16">
+        {/* <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-blue-400">
             Our Sponsors
           </h2>
@@ -242,7 +242,7 @@ export default function Home() {
               <Sponsor key={index} {...sponsor} />
             ))}
           </div>
-        </section>
+        </section> */}
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-blue-400">
@@ -256,10 +256,10 @@ export default function Home() {
               linkHref="/visit"
             />
             <GetInvolvedCard
-              title="Contribute"
+              title="Donate"
               description="Support our research efforts through donations or our Amazon Wish List."
-              linkText="Contribute Now"
-              linkHref="/contribute"
+              linkText="Donate Now"
+              linkHref="/donate"
             />
           </div>
         </section>

@@ -38,7 +38,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/contribute" className="hover:text-blue-400">
+            <Link href="/donate" className="hover:text-blue-400">
               Donate
             </Link>
           </li>
@@ -90,7 +90,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="/contribute"
+                  href="/donate"
                   className="hover:text-blue-400"
                   onClick={toggleMenu}
                 >
