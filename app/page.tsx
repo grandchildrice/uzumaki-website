@@ -222,9 +222,16 @@ export default function Home() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-blue-400">
-            Latest Research
-          </h2>
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-3xl font-bold text-blue-400">
+              Research Outputs
+            </h2>
+            <div className="text-right">
+              <Link href="/research" className="text-blue-400 hover:underline">
+                See More
+              </Link>
+            </div>
+          </div>
           <div className="grid gap-6">
             {researchOutputs.map((output, index) => (
               <ResearchOutput key={index} {...output} />
@@ -233,14 +240,17 @@ export default function Home() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-blue-400">
-            Recent Activity
-          </h2>
-          <div className="text-right">
-            <Link href="/activity" className="text-blue-400 hover:underline">
-              See More
-            </Link>
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-3xl font-bold text-blue-400">
+              Recent Activity
+            </h2>
+            <div className="text-right">
+              <Link href="/activity" className="text-blue-400 hover:underline">
+                See More
+              </Link>
+            </div>
           </div>
+
           <div className="space-y-8">
             {activities.map((activity, index) => (
               <ActivityItem key={index} {...activity} />
