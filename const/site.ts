@@ -1,10 +1,11 @@
-import { Env } from './env';
+import { Env } from "./env";
 
 export const Site = {
-  title: 'n2zm Blog',
-  description: 'Demo Blog using Next.js, Notion, and notion-to-zenn-md',
+  title: "Uzumaki",
+  description:
+    "A research hub in Japan to solve Ethereum's most critical problems",
   url: Env.BaseUrl,
-  locale: 'en_US',
-  icon: '🌵',
-  userName: '',
+  locale: "en_US",
+  icon: "",
+  userName: "",
 } as const;
