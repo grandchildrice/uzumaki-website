@@ -1,10 +1,4 @@
-import {
-  Circle,
-  ArrowRight,
-  ArrowLeft,
-  ArrowUp,
-  ArrowDown,
-} from "lucide-react";
+import { ArrowLeft, HandCoins, Cpu, Smartphone, Hexagon } from "lucide-react";
 
 interface ResearchThemeProps {
   title: string;
@@ -17,14 +11,14 @@ const ResearchTheme: React.FC<ResearchThemeProps> = ({
 }) => {
   const getIcon = (title: string) => {
     switch (title.toLowerCase()) {
+      case "pbs":
+        return <HandCoins className="w-12 h-12 text-blue-400" />;
       case "consensus":
-        return <Circle className="w-12 h-12 text-blue-400" />;
-      case "incentive mechanism":
-        return <ArrowRight className="w-12 h-12 text-blue-400" />;
+        return <Hexagon className="w-12 h-12 text-blue-400" />;
       case "zkvm":
-        return <ArrowUp className="w-12 h-12 text-blue-400" />;
+        return <Cpu className="w-12 h-12 text-blue-400" />;
       case "client-side zk proving":
-        return <ArrowDown className="w-12 h-12 text-blue-400" />;
+        return <Smartphone className="w-12 h-12 text-blue-400" />;
       default:
         return <ArrowLeft className="w-12 h-12 text-blue-400" />;
     }

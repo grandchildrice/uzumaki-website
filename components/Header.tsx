@@ -28,12 +28,18 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/visit" className="hover:text-blue-400">
+            <Link
+              href="https://grandchildrice.notion.site/f2503aa052084f039474859dccd39a17?pvs=105"
+              className="hover:text-blue-400"
+            >
               Visit
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="hover:text-blue-400">
+            <Link
+              href="https://www.notion.so/grandchildrice/16fd05af0d5a80c0abb3ddffdeddef6b?pvs=106"
+              className="hover:text-blue-400"
+            >
               Contact
             </Link>
           </li>
@@ -72,7 +78,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="/visit"
+                  href="https://grandchildrice.notion.site/f2503aa052084f039474859dccd39a17?pvs=105"
                   className="hover:text-blue-400"
                   onClick={toggleMenu}
                 >
@@ -81,7 +87,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="https://www.notion.so/grandchildrice/16fd05af0d5a80c0abb3ddffdeddef6b?pvs=106"
                   className="hover:text-blue-400"
                   onClick={toggleMenu}
                 >

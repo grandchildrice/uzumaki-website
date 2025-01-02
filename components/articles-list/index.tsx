@@ -28,7 +28,7 @@ export default async function ArticlesList({
             date={article.publishedAt}
             title={article.title}
             description=""
-            link={"/activity/" + article.id}
+            link={article.url ? article.url : "/activity/" + article.id}
           />
         ))}
       </>
@@ -41,8 +41,8 @@ export default async function ArticlesList({
             key={article.id}
             date={article.publishedAt}
             title={article.title}
-            authors={article.author}
-            link={"/research/" + article.id}
+            link={article.url ? article.url : "/research/" + article.id}
+            type={article.type}
           />
         ))}
       </>

@@ -1,11 +1,13 @@
 export const researchThemes = [
   {
-    title: "MEV",
-    description: "Improving blockchain consensus mechanisms",
+    title: "Consensus",
+    description:
+      "Building consensus on data with high-speed, highly distributed, and highly secure",
   },
   {
     title: "PBS",
-    description: "Designing effective network incentives",
+    description:
+      "Eliminating unfair transactions such as MEV through role separation",
   },
   {
     title: "zkVM",

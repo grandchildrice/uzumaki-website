@@ -11,6 +11,7 @@ import {
   isMultiSelectProperty,
   isSelectProperty,
   isTitleProperty,
+  isUrlProperty,
   retrieveDatabase,
 } from "../notion";
 import { Site } from "@/const/site";
@@ -125,6 +126,16 @@ export const getArticles = cache(
         );
       }
 
+      let url = "";
+      const urlProp = page.properties[NotionPropertyMappings.url];
+      console.log("hello");
+      if (isUrlProperty(urlProp)) {
+        url = urlProp.url;
+        console.log("yo");
+      }
+
+      console.log(url);
+
       return {
         id: page.id,
         title,
@@ -132,6 +143,7 @@ export const getArticles = cache(
         topics,
         publishedAt,
         author: page.created_by.id,
+        url,
       };
     });
 
