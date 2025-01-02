@@ -1,4 +1,11 @@
-import { ArrowLeft, HandCoins, Cpu, Smartphone, Hexagon } from "lucide-react";
+import {
+  ArrowLeft,
+  HandCoins,
+  Cpu,
+  Smartphone,
+  Hexagon,
+  ChartCandlestick,
+} from "lucide-react";
 
 interface ResearchThemeProps {
   title: string;
@@ -15,6 +22,8 @@ const ResearchTheme: React.FC<ResearchThemeProps> = ({
         return <HandCoins className="w-12 h-12 text-blue-400" />;
       case "consensus":
         return <Hexagon className="w-12 h-12 text-blue-400" />;
+      case "defi":
+        return <ChartCandlestick className="w-12 h-12 text-blue-400" />;
       case "zkvm":
         return <Cpu className="w-12 h-12 text-blue-400" />;
       case "client-side zk proving":

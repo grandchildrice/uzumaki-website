@@ -2,12 +2,15 @@ export const researchThemes = [
   {
     title: "Consensus",
     description:
-      "Building consensus on data with high-speed, highly distributed, and highly secure",
+      "Building consensus on blockchain state with high-speed, highly distributed, and highly secure",
   },
   {
     title: "PBS",
-    description:
-      "Eliminating unfair transactions such as MEV through role separation",
+    description: "Separating proposor and builder for censorship-resistant L1",
+  },
+  {
+    title: "DeFi",
+    description: "An open, transparent and MEV-minimizing financial app",
   },
   {
     title: "zkVM",
