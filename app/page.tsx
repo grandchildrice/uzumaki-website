@@ -11,17 +11,17 @@ import Image from "next/image";
 
 const researchThemes = [
   {
-    title: "Consensus",
+    title: "MEV",
     description: "Improving blockchain consensus mechanisms",
   },
   {
-    title: "Incentive mechanism",
+    title: "PBS",
     description: "Designing effective network incentives",
   },
-  { title: "zkVM", description: "Advancing zero-knowledge virtual machines" },
+  { title: "zkVM", description: "Proving the computation result is true without reexecution" },
   {
     title: "Client-side zk proving",
-    description: "Enhancing privacy in client applications",
+    description: "Proving SNARKs on the client side",
   },
 ];
 
@@ -114,7 +114,7 @@ const residents = [
     name: "vita",
     logo: "/residents/vita.jpeg",
     website: "https://x.com/keccak255",
-    topics: ["Consensus", "zkVM", "MEV"],
+    topics: ["Consensus", "MEV"],
     description: "Protocol Researcher at Titania Research",
   },
   {
