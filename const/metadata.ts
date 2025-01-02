@@ -63,7 +63,7 @@ export const residents = [
     description: "Application Researcher at Titania Research",
   },
   {
-    name: "tei",
+    name: "Hiro",
     logo: "/residents/tei.jpeg",
     website: "https://x.com/82y31",
     topics: ["MEV", "PBS", "Mechanism Design"],
