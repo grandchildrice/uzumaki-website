@@ -9,6 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "notion-to-zenn-md": "^0.0.10",
+    "server-only": "^0.0.1",
+    "sharp": "^0.33.0",
+    "url-join": "^5.0.0",
+    "zenn-content-css": "^0.1.150",
+    "zenn-embed-elements": "^0.1.150",
+    "zenn-markdown-html": "^0.1.150",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.469.0",
