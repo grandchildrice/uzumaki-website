@@ -270,10 +270,6 @@ export default function Home() {
         <section>
           <div className="flex space-x-4 m-auto">
             <SocialMediaButton
-              platform="X"
-              url="https://x.com/grandchildrice"
-            />
-            <SocialMediaButton
               platform="Telegram"
               url="https://t.me/uzumakiethereum"
             />
