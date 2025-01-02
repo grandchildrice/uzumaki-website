@@ -69,16 +69,19 @@ const activities = [
     date: "2023-06-01",
     title: "Ethereum Research Workshop",
     description: "Hosted a workshop on zkVM advancements",
+    link: "#",
   },
   {
     date: "2023-05-15",
     title: "Published Research Paper",
     description: "Paper on 'Optimizing Ethereum Consensus Mechanisms'",
+    link: "#",
   },
   {
     date: "2023-04-20",
     title: "Collaboration Announcement",
     description: "New collaboration with XYZ University",
+    link: "#",
   },
 ];
 
