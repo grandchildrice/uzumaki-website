@@ -1,12 +1,12 @@
-import { getDatabase, getNotionClient } from '@/lib/notion/api';
-import 'zenn-content-css';
-import Link from 'next/link';
-import ArticleType from '@/components/article-type';
-import Topic from '@/components/topic';
-import { Metadata } from 'next';
-import { Env } from '@/const/env';
-import urlJoin from 'url-join';
-import { getPageMetadata, getSiteInfo, notionToHtml } from '@/lib/blog-helper';
+import { getDatabase, getNotionClient } from "@/lib/notion/api";
+import "zenn-content-css";
+import Link from "next/link";
+import ArticleType from "@/components/article-type";
+import Topic from "@/components/topic";
+import { Metadata } from "next";
+import { Env } from "@/const/env";
+import urlJoin from "url-join";
+import { getPageMetadata, getSiteInfo, notionToHtml } from "@/lib/blog-helper";
 
 export const revalidate = 60 * 5; // revalidate at most every 5 minits
 
@@ -24,13 +24,13 @@ export async function generateMetadata({
   const databaseId = process.env.NOTION_DATABASE_RESEARCH_ID;
 
   if (!databaseId) {
-    throw new Error('Internal error.');
+    throw new Error("Internal error.");
   }
 
   const secret = process.env.NOTION_TOKEN;
 
   if (!secret) {
-    throw new Error('Internal error.');
+    throw new Error("Internal error.");
   }
 
   const { title } = await getPageMetadata(secret, slug);
@@ -44,10 +44,10 @@ export async function generateMetadata({
     openGraph: {
       title,
       description: title,
-      url: urlJoin(Env.BaseUrl, 'article', slug),
+      url: urlJoin(Env.BaseUrl, "article", slug),
       siteName: site.title,
       locale: site.locale,
-      type: 'website',
+      type: "website",
     },
   };
 }
@@ -56,7 +56,7 @@ export async function generateStaticParams() {
   const databaseId = process.env.NOTION_DATABASE_RESEARCH_ID;
 
   if (!databaseId) {
-    throw new Error('Internal error.');
+    throw new Error("Internal error.");
   }
 
   const notion = getNotionClient(process.env.NOTION_TOKEN);
@@ -67,12 +67,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ArticlePage({
-  params: { slug },
-}: PageProps) {
+export default async function ArticlePage({ params: { slug } }: PageProps) {
   const secret = process.env.NOTION_TOKEN;
   if (!secret) {
-    throw new Error('Internal error.');
+    throw new Error("Internal error.");
   }
 
   const html = await notionToHtml(secret, slug);
