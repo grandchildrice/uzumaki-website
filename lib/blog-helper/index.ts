@@ -128,13 +128,9 @@ export const getArticles = cache(
 
       let url = "";
       const urlProp = page.properties[NotionPropertyMappings.url];
-      console.log("hello");
       if (isUrlProperty(urlProp)) {
         url = urlProp.url;
-        console.log("yo");
       }
-
-      console.log(url);
 
       return {
         id: page.id,

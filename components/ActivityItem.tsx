@@ -19,7 +19,12 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-gray-400 mb-2">{date}</p>
       <p>{description}</p>
-      <Link href={link} className="text-blue-400 hover:underline">
+      <Link
+        href={link}
+        target={link.includes("activity") ? "_self" : "_blank"}
+        rel={link.includes("activity") ? "" : "noopener noreferrer"}
+        className="text-blue-400 hover:underline"
+      >
         Read More
       </Link>
     </div>
