@@ -72,7 +72,7 @@ export const residents = [
   {
     name: "banri",
     logo: "/residents/banri.jpeg",
-    website: "https://protocol.ai",
+    website: "https://x.com/banr1_",
     topics: ["Trading Strategy"],
     description: "Application Researcher at Titania Research",
   },

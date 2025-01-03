@@ -27,7 +27,7 @@ const Person: React.FC<PersonProps> = ({
         alt={`${name} logo`}
         width={100}
         height={100}
-        className="mb-2"
+        className="mb-2 rounded-full"
       />
       <p className="text-center text-md font-bold">{name}</p>
       {description && (
