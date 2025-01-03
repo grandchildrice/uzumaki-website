@@ -16,12 +16,26 @@ export const metadata = {
     url: "https://uzumaki.house",
     siteName: "Uzumaki",
     type: "website",
+    images: {
+      url: "/opengraph-image.jpg",
+      type: "image/jpg",
+      width: 1200,
+      height: 630,
+    },
   },
   twitter: {
+    type: "website",
     title: "Uzumaki",
     description:
       "A research hub in Japan to solve Ethereum's most critical problems",
+    url: "https://uzumaki.house",
     card: "summary_large_image",
+    images: {
+      url: "/opengraph-image.jpg",
+      type: "image/jpg",
+      width: 1200,
+      height: 630,
+    },
   },
 };
 
