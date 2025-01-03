@@ -63,13 +63,6 @@ export const residents = [
     description: "Application Researcher at Titania Research",
   },
   {
-    name: "Hiro",
-    logo: "/residents/tei.jpeg",
-    website: "https://x.com/82y31",
-    topics: ["MEV", "PBS", "Mechanism Design"],
-    description: "Protocol Researcher at Titania Research",
-  },
-  {
     name: "banri",
     logo: "/residents/banri.jpeg",
     website: "https://x.com/banr1_",
@@ -82,5 +75,12 @@ export const residents = [
     website: "https://x.com/adust09",
     topics: ["VOLE", "MPC"],
     description: "Grantee at PSE",
+  },
+  {
+    name: "Hiro",
+    logo: "/residents/tei.jpeg",
+    website: "https://x.com/82y31",
+    topics: ["MEV", "PBS", "Mechanism Design"],
+    description: "Protocol Researcher at Titania Research",
   },
 ];
