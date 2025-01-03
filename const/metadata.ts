@@ -45,7 +45,7 @@ export const residents = [
     name: "vita",
     logo: "/residents/vita.jpeg",
     website: "https://x.com/keccak255",
-    topics: ["Consensus", "MEV"],
+    topics: ["Consensus", "MEV", "PBS"],
     description: "Protocol Researcher at Titania Research",
   },
   {
@@ -59,14 +59,14 @@ export const residents = [
     name: "Alphaist",
     logo: "/residents/alpha.jpeg",
     website: "https://x.com/0xAlphaist",
-    topics: ["MEV", "OFA", "DEX", "Market Microstructure"],
+    topics: ["MEV", "OFA", "DeFi", "Market Microstructure"],
     description: "Application Researcher at Titania Research",
   },
   {
     name: "banri",
     logo: "/residents/banri.jpeg",
     website: "https://x.com/banr1_",
-    topics: ["Trading Strategy"],
+    topics: ["Trading Strategy", "Consensus", "DeFi"],
     description: "Application Researcher at Titania Research",
   },
   {
