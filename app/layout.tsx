@@ -2,42 +2,41 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getSiteInfo } from "@/lib/blog-helper";
+import { Metadata } from "next";
+import { Env } from "@/const/env";
+import { Site } from "@/const/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Uzumaki",
-  description:
-    "A research hub in Japan to solve Ethereum's most critical problems",
-  openGraph: {
-    title: "Uzumaki",
-    description:
-      "A research hub in Japan to solve Ethereum's most critical problems",
-    url: "https://uzumaki.house",
-    siteName: "Uzumaki",
-    type: "website",
-    images: {
-      url: "/opengraph-image.jpg",
-      type: "image/jpg",
-      width: 1200,
-      height: 630,
+export async function generateMetadata() {
+  const databaseId = process.env.NOTION_DATABASE_ACTIVITY_ID;
+
+  if (!databaseId) {
+    throw new Error("Internal error.");
+  }
+
+  const site = await getSiteInfo(databaseId);
+
+  const title = site.title == "Activity" ? Site.title : site.title;
+  const description =
+    site.title == "Activity" ? Site.description : site.description;
+
+  const metadata: Metadata = {
+    metadataBase: new URL(Env.BaseUrl),
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      url: site.url,
+      siteName: site.title,
+      locale: site.locale,
+      type: "website",
     },
-  },
-  twitter: {
-    type: "website",
-    title: "Uzumaki",
-    description:
-      "A research hub in Japan to solve Ethereum's most critical problems",
-    url: "https://uzumaki.house",
-    card: "summary_large_image",
-    images: {
-      url: "/opengraph-image.jpg",
-      type: "image/jpg",
-      width: 1200,
-      height: 630,
-    },
-  },
-};
+  };
+  return metadata;
+}
 
 export default function RootLayout({
   children,
