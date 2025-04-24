@@ -6,7 +6,7 @@ import SocialMediaButton from "@/components/SocialMediaButton";
 import Sponsor from "@/components/Sponsor";
 import Link from "next/link";
 import Image from "next/image";
-import { researchThemes, residents, sponsors, wedo } from "@/const/metadata";
+import { researchThemes, residents, sponsors, whatWeDo } from "@/const/metadata";
 import ArticlesList from "@/components/articles-list";
 
 export default async function Home() {
@@ -67,7 +67,7 @@ export default async function Home() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-blue-400">What we do</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {wedo.map((doing, index) => (
+            {whatWeDo.map((doing, index) => (
               <WhatWeDo
                 key={index}
                 title={doing.title}

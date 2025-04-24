@@ -6,7 +6,7 @@ export const researchThemes = [
   },
   {
     title: "PBS",
-    description: "Separating proposor and builder for censorship-resistant L1",
+    description: "Separating proposers and builders for censorship-resistant L1",
   },
   {
     title: "DeFi",
@@ -14,7 +14,7 @@ export const researchThemes = [
   },
   {
     title: "zkVM",
-    description: "Proving the computation result is true without reexecution",
+    description: "Proving the computation result is true without re-execution",
   },
   {
     title: "Client-side zk proving",
@@ -22,7 +22,7 @@ export const researchThemes = [
   },
 ];
 
-export const wedo = [
+export const whatWeDo = [
   {
     title: "House",
     description:
