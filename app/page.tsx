@@ -3,9 +3,10 @@ import GetInvolvedCard from "@/components/GetInvolvedCard";
 import Person from "@/components/Person";
 import WhatWeDo from "@/components/WhatWeDo";
 import SocialMediaButton from "@/components/SocialMediaButton";
+import Sponsor from "@/components/Sponsor";
 import Link from "next/link";
 import Image from "next/image";
-import { researchThemes, residents, wedo } from "@/const/metadata";
+import { researchThemes, residents, sponsors, wedo } from "@/const/metadata";
 import ArticlesList from "@/components/articles-list";
 
 export default async function Home() {
@@ -127,7 +128,7 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* <section className="mb-16">
+        <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-blue-400">
             Our Sponsors
           </h2>
@@ -136,7 +137,7 @@ export default async function Home() {
               <Sponsor key={index} {...sponsor} />
             ))}
           </div>
-        </section> */}
+        </section>
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-blue-400">

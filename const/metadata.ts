@@ -84,3 +84,66 @@ export const residents = [
     description: "Protocol Researcher at Titania Research",
   },
 ];
+
+export const sponsors = [
+  {
+    name: "Ethereum Foundation",
+    logo: "https://uzumaki.house/image/1d1d05af-0d5a-808c-96b0-c099d00fc036",
+    link: "https://x.com/EF_ESP",
+    isSvg: false,
+  },
+  {
+    name: "Geodework",
+    logo: "https://uzumaki.house/image/1dfd05af-0d5a-8057-a343-f451f5e41b6c",
+    link: "https://x.com/Geodework",
+    isSvg: true,
+  },
+  {
+    name: "Polygon",
+    logo: "https://uzumaki.house/image/1ded05af-0d5a-80a4-97c2-d3b7412067c9",
+    link: "https://x.com/0xPolygon",
+    isSvg: false,
+  },
+  {
+    name: "GuildQB",
+    logo: "https://uzumaki.house/image/1d1d05af-0d5a-8001-9068-c258dc5afd66",
+    link: "https://x.com/GuildQB",
+    isSvg: false,
+  },
+  {
+    name: "キリフダ株式会社",
+    logo: "https://uzumaki.house/image/1d1d05af-0d5a-80aa-9e22-c195dc261ff2",
+    link: "https://x.com/kirifuda_io",
+    isSvg: false,
+  },
+  {
+    name: "Decentralized Science (DeSci) Tokyo",
+    logo: "https://uzumaki.house/image/1ded05af-0d5a-8000-8454-f8c9ff5698dd",
+    link: "https://x.com/DeSciTokyo",
+    isSvg: false,
+  },
+  {
+    name: "チケ男",
+    logo: "https://uzumaki.house/image/1d1d05af-0d5a-809e-9749-ea4460aeb424",
+    link: "https://x.com/dd_TicketMe",
+    isSvg: false,
+  },
+  {
+    name: "KIMINORI JAPAN",
+    logo: "https://uzumaki.house/image/1d8d05af-0d5a-8000-aa16-cacb436c09e7",
+    link: "https://x.com/curry_tokyo",
+    isSvg: false,
+  },
+  {
+    name: "Hiro Shimo",
+    logo: "https://uzumaki.house/image/1d1d05af-0d5a-80aa-ab71-eeac6bb1b602",
+    link: "https://x.com/hiroshi_shimo",
+    isSvg: false,
+  },
+  {
+    name: "匿名希望さん",
+    logo: null,
+    link: null,
+    isSvg: false,
+  }
+];
