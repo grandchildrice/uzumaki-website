@@ -47,7 +47,7 @@ const Sponsor = ({ name, logo, link, isSvg }: SponsorProps) => {
     </Link>
   ) : (
     <div className="block p-4 bg-white/5 rounded-lg">
-      {renderLogo("./logo.svg")}
+      {renderLogo("/anon.png")}
       <h3 className="text-center text-sm font-medium">{name}</h3>
     </div>
   );

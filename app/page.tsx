@@ -26,7 +26,7 @@ export default async function Home() {
         <div className="text-center">
           <div className="mb-8 relative w-48 h-48 mx-auto">
             <Image
-              src="./logo.svg"
+              src="/logo.svg"
               alt="Uzumaki Research House"
               width={192}
               height={192}
